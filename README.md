@@ -1,6 +1,6 @@
 # @httpack/test-suite
 
-> Test suite for KeeVee Store API compliance.
+> Test suite for HTTPack API compliance.
 
 [![Latest Version](https://badgen.now.sh/npm/v/@httpack/test-suite)](https://www.npmjs.com/package/@httpack/test-suite)
 [![Node Engine](https://badgen.now.sh/npm/node/@httpack/test-suite)](https://www.npmjs.com/package/@httpack/test-suite)
