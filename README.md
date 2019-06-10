@@ -4,7 +4,7 @@
 
 [![Latest Version](https://badgen.now.sh/npm/v/@httpack/test-suite)](https://www.npmjs.com/package/@httpack/test-suite)
 [![Node Engine](https://badgen.now.sh/npm/node/@httpack/test-suite)](https://www.npmjs.com/package/@httpack/test-suite)
-[![License: MPL-2.0](https://badgen.now.sh/badge/license/MPL-2.0/green)](https://mozilla.org/MPL/2.0/)
+[![License: MPL-2.0](https://badgen.now.sh/badge/license/MPL-2.0/green)](https://mozilla.org/MPL/2.0/) [![Greenkeeper badge](https://badges.greenkeeper.io/httpack/test-suite.svg)](https://greenkeeper.io/)
 
 ## Installation
 
