@@ -1,51 +1,73 @@
-import { IClient, IRequest, IResponse, IResponseAttributes } from "@konceiver/httpie";
+/* eslint-disable jest/no-export */
+
 import "jest-extended";
+
+import {
+	IClient,
+	IRequest,
+	IResponse,
+	IResponseAttributes,
+} from "@konceiver/httpie";
 import { URL } from "url";
 
 export const complianceTests = (
 	createClient: () => IClient,
 	createRequest: () => IRequest,
-	createResponse: (attributes: IResponseAttributes) => IResponse,
+	createResponse: (attributes: IResponseAttributes) => IResponse
 ): void => {
 	describe("Client", () => {
 		test("get", async () => {
-			const response: IResponse = await createClient().get("https://httpbin.org/get");
+			const response: IResponse = await createClient().get(
+				"https://httpbin.org/get"
+			);
 
 			expect(response.getStatusCode()).toBe(200);
 		});
 
 		test("post", async () => {
-			const response: IResponse = await createClient().post("https://httpbin.org/post");
+			const response: IResponse = await createClient().post(
+				"https://httpbin.org/post"
+			);
 
 			expect(response.getStatusCode()).toBe(200);
 		});
 
 		test("put", async () => {
-			const response: IResponse = await createClient().put("https://httpbin.org/put");
+			const response: IResponse = await createClient().put(
+				"https://httpbin.org/put"
+			);
 
 			expect(response.getStatusCode()).toBe(200);
 		});
 
 		test("patch", async () => {
-			const response: IResponse = await createClient().patch("https://httpbin.org/patch");
+			const response: IResponse = await createClient().patch(
+				"https://httpbin.org/patch"
+			);
 
 			expect(response.getStatusCode()).toBe(200);
 		});
 
 		test("head", async () => {
-			const response: IResponse = await createClient().head("https://httpbin.org/get");
+			const response: IResponse = await createClient().head(
+				"https://httpbin.org/get"
+			);
 
 			expect(response.getStatusCode()).toBe(200);
 		});
 
 		test("delete", async () => {
-			const response: IResponse = await createClient().delete("https://httpbin.org/delete");
+			const response: IResponse = await createClient().delete(
+				"https://httpbin.org/delete"
+			);
 
 			expect(response.getStatusCode()).toBe(200);
 		});
 
 		test("get (error)", async () => {
-			const response: IResponse = await createClient().get("https://httpbin.org/status/400");
+			const response: IResponse = await createClient().get(
+				"https://httpbin.org/status/400"
+			);
 
 			expect(response.getStatusCode()).toBe(400);
 			expect(response.getStatusMessage()).toBe("BAD REQUEST");
@@ -107,11 +129,15 @@ export const complianceTests = (
 		});
 
 		test("getStatusCode", () => {
-			expect(createResponse(response).getStatusCode()).toBe(response.statusCode);
+			expect(createResponse(response).getStatusCode()).toBe(
+				response.statusCode
+			);
 		});
 
 		test("getStatusMessage", () => {
-			expect(createResponse(response).getStatusMessage()).toBe(response.statusMessage);
+			expect(createResponse(response).getStatusMessage()).toBe(
+				response.statusMessage
+			);
 		});
 
 		test("getHeaders", () => {
@@ -119,7 +145,9 @@ export const complianceTests = (
 		});
 
 		test("getHeader", () => {
-			expect(createResponse(response).getHeader("content-type")).toBe(response.headers["content-type"]);
+			expect(createResponse(response).getHeader("content-type")).toBe(
+				response.headers["content-type"]
+			);
 		});
 	});
 };
